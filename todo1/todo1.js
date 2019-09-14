@@ -122,10 +122,8 @@ const bindEdit = () => {
     bindEventAll(editButtons, EventType.click, (event) => {
         log('editButton click')
         let self = event.target
-        inserteditTodo(self)
-        
+        inserteditTodo(self)   
     })
-   
 }
 const bindSubmit = () => {
     let submitButtons = es('.button-todo-submit')
@@ -143,9 +141,13 @@ const bindSubmit = () => {
 }
 
 const bindEvents = () => {
+    //add
     bindAdd()
+    //delete
     bindDel()
+    // finish
     bindFinish()
+    //update
     bindEdit()
     bindSubmit()
 }

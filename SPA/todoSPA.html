@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SPA</title>
+    <link rel="stylesheet" href="css/todo.css">
+    <script src="utils/utils.js"></script>
+</head>
+
+<body>
+    <div class="">
+        <button class="todo-tab" data-page=todo-new>new todo 界面</button>
+        <button class="todo-tab" data-page=todo-list>list todo 界面</button>
+        <button class="todo-tab" data-page=todo-edit>todo edit 界面</button>
+        <button class="todo-tab" data-page=todo-detail>todo detail 界面</button>
+    </div>
+
+    <div class="todo-page  todo-new">
+        <input id=id-input-task type="text" value="">
+        <button id=id-button-add type="button">创建 todo</button>
+    </div>
+
+    <div class="todo-page todo-list"></div>
+    <div class="todo-page todo-edit"></div>
+    <div class="todo-page todo-detail"></div>
+    <script src="todoApi.js"></script>
+    <script src="pageTodoList.js"></script>
+    <script src=main.js></script>
+</body>
+
+</html>

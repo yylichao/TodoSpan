@@ -1,0 +1,8 @@
+.todo-hide {
+    display: none;
+}
+.todo-done {
+    color: black;
+    background-color: pink;
+    text-decoration: line-through;
+}
