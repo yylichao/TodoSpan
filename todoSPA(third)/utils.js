@@ -1,0 +1,111 @@
+const log = console.log.bind(console)
+
+const e = selector => document.querySelector(selector)
+
+const es = selector => document.querySelectorAll(selector)
+
+const appendHtml = (element, html) => element.insertAdjacentHTML('beforeend', html)
+
+const find = (element, selector) => {
+    return element.querySelector(selector)
+}
+
+const findAll = (element, selector) => {
+    return element.querySelectorAll(selector)
+}
+
+const EventType = {
+    click: 'click',
+    popstate: 'popstate',
+    mouseover: 'mouseover',
+    mouseout: 'mouseout',
+    keyup: 'keyup',
+}
+
+const toggleClass = (element, className) => {
+    if (element.classList.contains(className)) {
+        element.classList.remove(className)
+    } else {
+        element.classList.add(className)
+    }
+}
+
+const removeClassAll = (className) => {
+    let selector = '.' + className
+    let elements = document.querySelectorAll(selector)
+    for (let v of elements) {
+        let element = v
+        element.classList.remove(className)
+    }
+}
+
+const floor = num => Math.floor(num)
+// 生成 1 到 number 之间的随机整数
+const random = num => Math.ceil(Math.random() * num)
+
+const now = () => {
+    let d = new Date()
+    let nm = d.getFullYear()
+    let yt = d.getMonth() + 1
+    let ri = d.getDate()
+    let ui = d.getHours()
+    let ff = d.getMinutes()
+    let mc = d.getSeconds()
+
+    return `${nm}/${yt}/${ri} ${ui}:${ff}:${mc}`
+}
+
+const sty = obj => JSON.stringify(obj)
+const par = obj => JSON.parse(obj)
+
+/*
+    element : div
+    action: arr  or eventName(str)
+    callback: func
+ */
+// const bindEvent = (ele, action, callback => {
+//     if (Array.isArray(action)) {
+//         action.forEach((i) => {
+//             ele.addEventListener(i, callback)
+//         })
+//     } else {
+//         ele.addEventListener(action, callback)
+//     }
+// }
+const bindEvent = (ele, eventName, callback) => {
+    ele.addEventListener(eventName, callback)
+}
+// 给所有的元素绑定事件
+const bindAll = (elements, eventName, callback) => {
+    for (let v of elements) {
+        let element = v
+        element.addEventListener(eventName, callback)
+    }
+}
+
+// const addEvents = (eles, action, callback) => {
+//     eles = Array.from(eles)
+//     eles.forEach((e) => {
+//         e.addEventListener(action, callback)
+//     })
+// }
+//
+// const unBindEvent = (ele, action, callback) => {
+//     if (Array.isArray(action)) {
+//         action.forEach((i) => {
+//             ele.removeEventListener(i, callback)
+//         })
+//     } else {
+//         ele.removeEventListener(action, callback)
+//     }
+// }
+const todoIdWithIndex = (todoList, id) => {
+    let index = -1
+    for (let v of todoList) {
+        index += 1
+        if (v.id = id) {
+            break
+        }
+    }
+    return index
+}
